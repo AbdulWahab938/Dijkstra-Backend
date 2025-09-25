@@ -220,3 +220,28 @@ class ErrorCodes:
 
     # Not found errors
     USER_WORKEXP_NF_A01 = "USER-WORKEXP-NF-A01"  # Work experience not found
+
+    # -----------------------------
+    # Users → Links
+    # -----------------------------
+
+    # Database errors
+    USER_LINKS_DB_A01 = "USER-LINKS-DB-A01"  # Failure inserting links
+    USER_LINKS_DB_A02 = "USER-LINKS-DB-A02"  # Failure updating links
+    USER_LINKS_DB_A03 = "USER-LINKS-DB-A03"  # Failure deleting links
+
+    # Server / Unexpected errors
+    USER_LINKS_SRV_A01 = "USER-LINKS-SRV-A01"  # Generic server error
+    USER_LINKS_SRV_A02 = "USER-LINKS-SRV-A02"  # Error fetching links list
+
+    # Authentication / Permission errors
+    USER_LINKS_AUTH_A01 = "USER-LINKS-AUTH-A01"  # User not authorized
+    USER_LINKS_AUTH_A02 = "USER-LINKS-AUTH-A02"  # User session expired / invalid token
+
+    # Validation / Input errors
+    USER_LINKS_VAL_A01 = "USER-LINKS-VAL-A01"  # Invalid links payload
+    USER_LINKS_VAL_A02 = "USER-LINKS-VAL-A02"  # Required field missing
+
+    # Not found / already exists errors
+    USER_LINKS_NF_A01 = "USER-LINKS-NF-A01"  # Links not found
+    USER_LINKS_AE_A01 = "USER-LINKS-AE-A01"  # Links already exist for user

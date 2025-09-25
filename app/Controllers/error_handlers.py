@@ -3,7 +3,7 @@ from fastapi import Request
 from Utils.error_codes import ErrorCodes
 from Utils.Exceptions.opportunities_exceptions import FellowshipNotFound, InvalidTools, JobNotFound, OrganizationNotFound, ProjectOpportunityNotFound
 from Utils.errors import raise_api_error
-from Utils.Exceptions.user_exceptions import LocationNotFound, ProfileNotFound, UserNotFound, WorkExperienceNotFound
+from Utils.Exceptions.user_exceptions import LocationNotFound, ProfileNotFound, UserNotFound, WorkExperienceNotFound, LinksNotFound, LinksAlreadyExists
 import logging
 
 logger = logging.getLogger(__name__)
@@ -118,4 +118,23 @@ def register_exception_handlers(app):
             error="Internal server error",
             detail="An unexpected error occurred",
             status=500
+        )
+    @app.exception_handler(LinksNotFound)
+    async def links_not_found_handler(request: Request, exc: LinksNotFound):
+        logger.warning(f"Links not found: {exc.link_id}")
+        raise_api_error(
+            code=ErrorCodes.USER_LINKS_NF_A01,
+            error="Links not found",
+            detail=str(exc),
+            status=404
+        )
+
+    @app.exception_handler(LinksAlreadyExists)
+    async def links_already_exists_handler(request: Request, exc: LinksAlreadyExists):
+        logger.warning(f"Links already exist for user: {exc.user_id}")
+        raise_api_error(
+            code=ErrorCodes.USER_LINKS_AE_A01,
+            error="Links already exist",
+            detail=str(exc),
+            status=409
         )
