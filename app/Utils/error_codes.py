@@ -220,3 +220,28 @@ class ErrorCodes:
 
     # Not found errors
     USER_WORKEXP_NF_A01 = "USER-WORKEXP-NF-A01"  # Work experience not found
+
+
+    # -----------------------------
+    # Users → Projects
+    # -----------------------------
+
+    # Database errors
+    USER_PROJECT_DB_A01 = "USER-PROJECT-DB-A01"  # Failure inserting project
+    USER_PROJECT_DB_A02 = "USER-PROJECT-DB-A02"  # Failure updating project
+    USER_PROJECT_DB_A03 = "USER-PROJECT-DB-A03"  # Failure deleting project
+
+    # Server / Unexpected errors
+    USER_PROJECT_SRV_A01 = "USER-PROJECT-SRV-A01"  # Generic server error
+    USER_PROJECT_SRV_A02 = "USER-PROJECT-SRV-A02"  # Error fetching projects list
+
+    # Authentication / Permission errors
+    USER_PROJECT_AUTH_A01 = "USER-PROJECT-AUTH-A01"  # User not authorized
+    USER_PROJECT_AUTH_A02 = "USER-PROJECT-AUTH-A02"  # Session expired / invalid token
+
+    # Validation / Input errors
+    USER_PROJECT_VAL_A01 = "USER-PROJECT-VAL-A01"  # Invalid project payload
+    USER_PROJECT_VAL_A02 = "USER-PROJECT-VAL-A02"  # Required field missing
+
+    # Not found errors
+    USER_PROJECT_NF_A01 = "USER-PROJECT-NF-A01"  # Project not found

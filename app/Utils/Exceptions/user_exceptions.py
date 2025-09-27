@@ -37,3 +37,7 @@ class GitHubUsernameAlreadyExists(ServiceError):
     def __init__(self, github_username):
         super().__init__(f"User with GitHub username '{github_username}' already exists.")
         self.github_username = github_username
+class ProjectsNotFound(ServiceError):
+    def __init__(self, project_id):
+        super().__init__(f"Project with ID {project_id} does not exist.")
+        self.project_id = project_id
